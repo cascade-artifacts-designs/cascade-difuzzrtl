@@ -1,0 +1,32 @@
+/usr/local/lib/python3.10/dist-packages/cocotb/share/makefiles/Makefile.inc:169: Including Makefile.inc from a user makefile is a no-op and deprecated. Remove the Makefile.inc inclusion from your makefile, and only leave the Makefile.sim include.
+rm -f results.xml
+make -f Makefile results.xml
+make[1]: Entering directory '/difuzzrtl/difuzz-rtl/Fuzzer'
+/usr/local/lib/python3.10/dist-packages/cocotb/share/makefiles/Makefile.inc:169: Including Makefile.inc from a user makefile is a no-op and deprecated. Remove the Makefile.inc inclusion from your makefile, and only leave the Makefile.sim include.
+rm -f results.xml
+MODULE=DifuzzRTL TESTCASE= TOPLEVEL=RocketTile TOPLEVEL_LANG=verilog \
+         sim_build/Vtop +DEBUG=1 
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:76   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Verilator version 4.106 2020-12-02
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.7.2 from /usr/local/lib/python3.10/dist-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1684960043
+     0.00ns ERROR    gpi                                VPI: Couldn't find root handle RocketTile
+     0.00ns ERROR    gpi                                VPI: Toplevel instances: RocketTile != BoomTile...
+     0.00ns ERROR    gpi                                No root handle found
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/cocotb/__init__.py", line 233, in _initialise_testbench
+    _initialise_testbench_(argv_)
+  File "/usr/local/lib/python3.10/dist-packages/cocotb/__init__.py", line 310, in _initialise_testbench_
+    raise RuntimeError(f"Can not find root handle ({root_name})")
+RuntimeError: Can not find root handle (RocketTile)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/cocotb/__init__.py", line 341, in _sim_event
+    scheduler.log.error(msg)
+AttributeError: 'NoneType' object has no attribute 'log'
+     0.00ns ERROR    gpi                                Passing event to upper layer failed
+- /usr/local/lib/python3.10/dist-packages/cocotb/share/lib/verilator/verilator.cpp:118: Verilog $finish
+ERROR: results.xml was not written by the simulation!
+make[1]: *** [/usr/local/lib/python3.10/dist-packages/cocotb/share/makefiles/simulators/Makefile.verilator:62: results.xml] Error 1
+make[1]: Leaving directory '/difuzzrtl/difuzz-rtl/Fuzzer'
+make: *** [/usr/local/lib/python3.10/dist-packages/cocotb/share/makefiles/Makefile.inc:40: sim] Error 2
